@@ -1,0 +1,13 @@
+UnitColours: [pink, green]
+TeamColours: [yellow, blue]
+Goals: 
+      defend: [640, 225]
+      attack: [0, 225]
+
+Teams:
+      allies: yellow
+      enemies: blue
+
+MyColour: pink
+AllyColor: green
+CommsPort: /dev/ttyACM0

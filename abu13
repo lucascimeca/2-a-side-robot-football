@@ -1,0 +1,82 @@
+[33mcommit 4c2d45f7e9783eeccfa9be0742f8747b08454313[m
+Merge: 8e592cc 57e4663
+Author: Luca Scimeca <Luca Scimeca>
+Date:   Tue Jan 26 12:16:12 2016 +0000
+
+    Merge branch 'master' of https://bitbucket.org/xsrust/sdp-group-6c-2015
+
+[33mcommit 8e592ccc5f3bdb0692f2d386150a2ce926ecce64[m
+Author: Luca Scimeca <Luca Scimeca>
+Date:   Tue Jan 26 12:15:11 2016 +0000
+
+    Fixed turning libraries, to be tested
+
+[33mcommit 57e4663c2b6ff56f397cc23f7cce86236bab2389[m
+Author: Steven Heggie <s.heggi3@gmail.com>
+Date:   Tue Jan 26 11:54:14 2016 +0000
+
+    working cmd over radio code <milestoneOne.ino>
+
+[33mcommit fee155a1934009b808ce7f27ae414d335ef57e98[m
+Author: Steven Heggie <s.heggi3@gmail.com>
+Date:   Tue Jan 26 11:09:20 2016 +0000
+
+    I2C file sender
+
+[33mcommit 85b36537081b2cbdcc6e80deeea6a33e1d14cae3[m
+Author: Donal O'Shea <renegadethunder@gmail.com>
+Date:   Tue Jan 26 10:41:01 2016 +0000
+
+    Replaced hardcoded motor numbers with C preprocessor variables
+
+[33mcommit bbc1055cee3c8aafcfb5fda1d28bf179c06ddb3f[m
+Author: lucascimeca <luca.scimeca@live.com>
+Date:   Mon Jan 25 21:28:51 2016 +0000
+
+    fixed problem with turning, API still to be tested
+
+[33mcommit 20fedf50083de3621e009e3984ef908d91e991b8[m
+Author: xsrust <xsrust@gmail.com>
+Date:   Mon Jan 25 17:56:29 2016 +0000
+
+    changed moveForward to account for curve
+    moveBackward need to be changed accordingly
+
+[33mcommit f2f971edb5f1d9971778550fabc72976a877a0b8[m
+Author: Luca Scimeca <Luca Scimeca>
+Date:   Mon Jan 25 16:54:16 2016 +0000
+
+    API fix 2, turning functions to be fixed
+
+[33mcommit 98f2fdb313dfdc590e2fbd2fa88f00468dba2595[m
+Author: Luca Scimeca <s1344727@longhorsley.inf.ed.ac.uk>
+Date:   Mon Jan 25 13:33:39 2016 +0000
+
+    fixed bugs with delay API
+
+[33mcommit 0634eeccc114d89187606856b0f5e8ba8dcf48fc[m
+Author: lucascimeca <luca.scimeca@live.com>
+Date:   Sat Jan 23 14:07:01 2016 +0000
+
+    Added Rotary libraries and example to read off the positions of the
+    motors. (To be incorporated to functions for basic movements)
+
+[33mcommit 3285bc3de0c5df99d09e71789493ff28b156dd56[m
+Author: lucascimeca <luca.scimeca@live.com>
+Date:   Fri Jan 22 15:38:40 2016 +0000
+
+    Modulatized basic functions for motion, fixed issues with API.
+
+[33mcommit 77496619bd3b657b618437b8a89c51fab30e9e6e[m
+Author: lucascimeca <luca.scimeca@live.com>
+Date:   Thu Jan 21 20:18:23 2016 +0000
+
+    fixed initial API for moving and turning, added missing parameters for
+    delay
+
+[33mcommit f87da6a218dee2a33147d16c2c6a222b7d09d1bc[m
+Author: lucascimeca <luca.scimeca@live.com>
+Date:   Wed Jan 20 20:39:20 2016 +0000
+
+    Initial commit: added libraries to make prototype move forward, backward
+    and turn of # degrees - to be finished

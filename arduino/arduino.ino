@@ -1,0 +1,123 @@
+#include "SDPArduino.h"
+#include "BasicMotion.h"
+#include <Wire.h>
+#include <string.h>
+#include <stdlib.h>
+#include <stdio.h>
+#include <ctype.h>
+
+
+String commands[10];
+String tempBuffer;
+int index=0;
+String cmdCountStr;
+
+void setup() {
+    SDPsetup();
+    //Serial.println("Waiting for user to send command...\n");
+}
+
+void loop() {
+
+    while (Serial.available() > 0){
+	
+        char received = Serial.read();
+        //Serial.print(received);
+
+
+        if(received != ',' && received != '\r'){
+          tempBuffer += received;
+
+        } else if(received == ','){
+
+          commands[index] = tempBuffer; //
+          index++;
+          tempBuffer = "";
+
+        } else if (received == '\r' || received == '\n'){
+            //Serial.println("\nData Received!");
+            //Serial.println("\nCommands:");
+
+            /*for (int k=0; k< 10; k++){
+                Serial.println(commands[k]);
+            }*/
+
+
+            //excute commands
+            for(int i=0; i<=index-1; i++){
+
+              int cmdLen = commands[i].length();
+              String distanceString = "";
+              if(not(isdigit(commands[i][1]))){
+                distanceString = commands[i].substring(2,cmdLen); // cut element from pos 2 onwards (for slanting)
+              }
+              else{
+                distanceString = commands[i].substring(1,cmdLen); // cut element from pos 1 onwards
+              }
+              int distance = distanceString.toInt(); //convert distance string to int
+
+              //Serial.println(commands[i]);
+              if (distance<4) {
+                
+              }
+              else if(commands[i][0]=='f')
+              {
+                moveForward(distance);
+                //Serial.println("\nExecution Completed");
+              }
+              else if(commands[i][0]=='b')
+              {
+                moveBackward(distance);
+                //Serial.println("\nExecution Completed");
+              }
+              else if(commands[i][0]=='r')
+              {
+                turnRight(distance);
+                //Serial.println("\nExecution Completed");
+              }
+              else if(commands[i][0]=='l')
+              {
+                turnLeft(distance);
+                //Serial.println("\nExecution Completed");
+              }
+              else if(commands[i][0]=='k')
+              {
+                kick(distance);
+                //Serial.println("\nExecution Completed");
+              }
+              else if(commands[i][0]=='s' && commands[i][1]=='r'){
+                slantRight(distance);
+                //Serial.println("\nExecution Completed");
+              }
+              else if(commands[i][0]=='s' && commands[i][1]=='l'){
+                slantLeft(distance);
+                //Serial.println("\nExecution Completed");
+              }
+              else if(commands[i][0]=='g' && commands[i][1]=='o'){
+                grabRelease();
+                //Serial.println("\nExecution Completed");
+              }
+              else if(commands[i][0]=='g' && commands[i][1]=='c'){
+                grab();
+                //Serial.println("\nExecution Completed");
+              }
+              else if(commands[i][0]=='g' && commands[i][1]=='b'){
+                grabBall();
+                //Serial.println("\nExecution Completed");
+              }
+
+            }
+
+            //clear commands array and index counter for next transmission
+            for (int j=0; j < 10; j++){
+                commands[j]="";
+                index = 0;
+            }
+
+            Serial.write("d");		
+            
+        }
+    }
+
+
+}
